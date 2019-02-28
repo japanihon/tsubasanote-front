@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import Notes from './Notes';
 import NoteDetail from './NoteDetail';
 import Labels from './Labels';

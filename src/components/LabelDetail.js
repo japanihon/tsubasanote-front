@@ -2,7 +2,6 @@ import React from 'react';
 
 const LabelDetail = props => {
     const { id } = props.match.params;
-    console.log(id);
     return (
         <div>
             <h2>Label</h2>

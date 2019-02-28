@@ -2,7 +2,6 @@ import React from 'react';
 
 const NoteDetail = props => {
     const { id } = props.match.params;
-    console.log(id);
     return (
         <div>
             <h2>Note</h2>
