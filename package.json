@@ -6,8 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node_modules/.bin/webpack-dev-server --mode development",
-    "build": "node_modules/.bin/webpack --config webpack.config.js --mode production",
-    "serve": "node_modules/.bin/http-server ./dist"
+    "build": "node_modules/.bin/webpack --config webpack.config.js --mode production"
   },
   "dependencies": {
     "react": "^16.8.3",
@@ -26,4 +25,3 @@
     "webpack-dev-server": "^3.2.1"
   }
 }
-
