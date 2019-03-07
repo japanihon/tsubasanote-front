@@ -7,7 +7,7 @@ var bourbon = require("node-bourbon");
 var neat = require("node-neat");
 
 gulp.task("scss", function(){
-  return gulp.src("./scss/**/*.scss")
+  return gulp.src("./scss/style.scss")
 
     .pipe(plumber({
       errorHandler: notify.onError("Error: <%= error.message %>") //<-
@@ -18,16 +18,16 @@ gulp.task("scss", function(){
       includePaths: neat.includePaths,
       sourceComments:true
     }).on('error', sass.logError))
-    .pipe(sourcemaps.write("./"))
-    .pipe(gulp.dest("./"));
+    .pipe(sourcemaps.write("./dist"))
+    .pipe(gulp.dest("./dist"));
 
 
 
 });
 
 gulp.task('watch',function () {
-  gulp.watch("scss/**/*.scss", ["scss"]);
-  gulp.watch(['./public/stylesheets/*.css'], function(event){
+  gulp.watch("scss/style.scss", ["scss"]);
+  gulp.watch(['./dist/*.css'], function(event){
     console.log("css changed");
   });
 });

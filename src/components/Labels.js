@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import SideBar from './SideBar.js'
 
 class Labels extends React.Component {
     constructor() {
@@ -23,6 +24,7 @@ class Labels extends React.Component {
         console.log(this.state)
         return (
             <div>
+                <SideBar />
                 <h2>Labels</h2>
                 <p>ラベル一覧</p>
             </div>

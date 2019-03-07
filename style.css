@@ -5,41 +5,6 @@ Author: staff
 Version: 1.0.0
 Tags:
 */
-/* フォント設定 */
-/* line 1, scss/setting/_fonts.scss */
-.fa-angle-up:before {
-  content: "\f106"; }
-
-/* line 2, scss/setting/_fonts.scss */
-.fa-angle-right:before {
-  content: "\f105"; }
-
-/* line 3, scss/setting/_fonts.scss */
-.fa-angle-down:before {
-  content: "\f107"; }
-
-/* line 4, scss/setting/_fonts.scss */
-.fa-angle-left:before {
-  content: "\f104"; }
-
-/* line 5, scss/setting/_fonts.scss */
-.fa {
-  position: relative;
-  display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transform: translate(0, 0); }
-
-/* 筆記体font */
-/* line 20, scss/setting/_fonts.scss */
-.title-font {
-  font-family: 'Roboto', sans-serif;
-  font-weight: normal;
-  font-style: normal; }
-
 /* ユーティリティ設定 */
 /*==================================================
  * utility margin
@@ -432,7 +397,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   font-weight: normal;
-  height: auto;
+  height: 100%;
   line-height: 1.8em;
   -webkit-text-size-adjust: 100%; }
 
