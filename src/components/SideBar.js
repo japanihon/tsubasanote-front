@@ -4,7 +4,8 @@ import styled from 'styled-components';
 const Sidebar = styled.div`
   display: inline-block;
   float: left;
-  height: 100%;
+  position: sticky;
+  top: 0px;
   width: 20%;
   background: #545973;
   `

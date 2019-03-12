@@ -24,7 +24,6 @@ class Labels extends React.Component {
         console.log(this.state)
         return (
             <div>
-                <SideBar />
                 <h2>Labels</h2>
                 <p>ラベル一覧</p>
             </div>

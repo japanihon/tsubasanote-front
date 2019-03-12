@@ -76,7 +76,6 @@ class Notes extends React.Component {
 
         return (
             <div>
-                <SideBar />
                 <Wrapper>
                     <PageTitle>Note title</PageTitle>
                     <NoteUl>

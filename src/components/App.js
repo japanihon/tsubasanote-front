@@ -4,17 +4,21 @@ import Notes from './Notes';
 import NoteDetail from './NoteDetail';
 import Labels from './Labels';
 import LabelDetail from './LabelDetail';
+import SideBar from './SideBar';
 
 const App = () => (
-    <BrowserRouter>
-      <div>
-          <Route exact path='/' component={Notes} />
-          <Route exact path='/notes' component={Notes} />
-          <Route path='/notes/:id' component={NoteDetail} />
-          <Route exact path='/labels' component={Labels} />
-          <Route path='/labels/:id' component={LabelDetail} />
-      </div>
-    </BrowserRouter>
+    <React.Fragment>
+      <SideBar />
+      <BrowserRouter>
+        <div>
+            <Route exact path='/' component={Notes} />
+            <Route exact path='/notes' component={Notes} />
+            <Route path='/notes/:id' component={NoteDetail} />
+            <Route exact path='/labels' component={Labels} />
+            <Route path='/labels/:id' component={LabelDetail} />
+        </div>
+      </BrowserRouter>
+    </React.Fragment>
 )
 
 export default App;
