@@ -41,14 +41,10 @@ const NoteDate = styled.p`
     color: #888888;
 `
 
-
-
-
 class Notes extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            id: 0,
             notes: []
         };
     }
@@ -78,7 +74,7 @@ class Notes extends React.Component {
             <div>
                 <SideBar />
                 <Wrapper>
-                    <PageTitle>Note title</PageTitle>
+                    <PageTitle>つばさのーと</PageTitle>
                     <NoteUl>
                         {list}
                     </NoteUl>
