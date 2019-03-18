@@ -9,6 +9,7 @@
     "build": "webpack --config webpack.config.js --mode production"
   },
   "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.3.4",
     "axios": "^0.18.0",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
