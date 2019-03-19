@@ -62,7 +62,6 @@ class NoteDetail extends React.Component {
     render() {
         return(
             <div>
-                <SideBar />
                 <Wrapper>
                     <TitleArea>
                         <NoteTitle>{this.state.title}</NoteTitle>
