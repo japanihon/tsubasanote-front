@@ -15,10 +15,14 @@ const PageTitle = styled.h1`
     font-size: 64px;
     color: #888888;
 `;
-const NoteUl = styled.ul`
+
+const BaseUl = styled.ul`
+    margin: 0;
+`;
+
+const NoteUl = styled(BaseUl)`
     list-style: none;
     padding: 0;
-    height: 100%;
     width: 100%;
 `;
 
@@ -92,12 +96,10 @@ class Notes extends React.Component {
         });
 
         return (
-            <div>
-                <Wrapper>
-                    <PageTitle>つばさのーと</PageTitle>
-                    <NoteUl>{list}</NoteUl>
-                </Wrapper>
-            </div>
+            <Wrapper>
+                <PageTitle>つばさのーと</PageTitle>
+                <NoteUl>{list}</NoteUl>
+            </Wrapper>
         );
     }
 }
