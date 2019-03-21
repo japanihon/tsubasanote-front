@@ -24,6 +24,8 @@ const Title = styled.h1`
 `;
 const Name = styled.div`
   width: 100px;
+  color: ${props => props.fg_color};
+  background: ${props => props.bg_color};
   /* height: 14px; */
 `;
 const Description = styled.div`
@@ -62,7 +64,7 @@ class Labels extends React.Component {
     const labels = this.state.labels.map(label => {
       return (
         <Label>
-          <Name>
+          <Name fg_color={label.fg_color} bg_color={label.bg_color} >
             {label.name}
           </Name>
           <Description>
