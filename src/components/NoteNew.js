@@ -1,22 +1,26 @@
 import React from "react";
-import SideBar from "./SideBar.js";
 import axios from "axios";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
     display: inline-block;
-    height: 100%;
-    width: 80%;
+    width: calc(100vw - 260px);
 `;
 
-const TitleArea = styled.textarea`
+const TitleArea = styled.div`
+    display: block;
+    height: 19vh;
+    width: 100vw;
+`;
+
+const TypeTitleArea = styled.textarea`
     display: inline-block;
+    width: 50vw;
     margin-left: 65px;
     font-family: "Arial";
     font-size: 64px;
     border: none;
     ::placeholder {
-        padding-top: 15px;
         color: #dddddd;
     }
 `;
@@ -38,8 +42,7 @@ const SubmitButton = styled.button`
 
 const ContentArea = styled.textarea`
     display: block;
-    margin-top: 15px;
-    height: 100vh;
+    height: 80vh;
     width: 75vw;
     margin-left: 65px;
     font-family: "Arial";
@@ -79,14 +82,15 @@ class NoteNew extends React.Component {
             title: this.state.title,
             content: this.state.content
         });
+        alert("ノートが作成されました");
     };
 
     render() {
         return (
-            <div>
-                <Wrapper>
-                    <form onSubmit={this.handleSubmit}>
-                        <TitleArea
+            <Wrapper>
+                <form onSubmit={this.handleSubmit}>
+                    <TitleArea>
+                        <TypeTitleArea
                             type="title"
                             name="title"
                             value={this.state.title}
@@ -94,16 +98,16 @@ class NoteNew extends React.Component {
                             placeholder="Title here"
                         />
                         <SubmitButton type="submit">Save</SubmitButton>
-                        <ContentArea
-                            type="content"
-                            name="content"
-                            value={this.state.content}
-                            onChange={this.handleContentChange}
-                            placeholder="text here"
-                        />
-                    </form>
-                </Wrapper>
-            </div>
+                    </TitleArea>
+                    <ContentArea
+                        type="content"
+                        name="content"
+                        value={this.state.content}
+                        onChange={this.handleContentChange}
+                        placeholder="text here"
+                    />
+                </form>
+            </Wrapper>
         );
     }
 }

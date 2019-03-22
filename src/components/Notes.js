@@ -27,7 +27,6 @@ const NoteUl = styled(BaseUl)`
 `;
 
 const NoteLi = styled.li`
-    height: 140px;
     width: 100%;
     border-top: 1px solid #aaaaaa;
 `;
