@@ -8,10 +8,36 @@ const Wrapper = styled.div`
     width: calc(100vw - 260px);
 `;
 
+const Container = styled.div`
+    display: block;
+    padding-top: 50px;
+    width: 50vw;
+    margin: 0 auto;
+`;
 const TitleArea = styled.div`
     display: block;
     height: 19vh;
     width: 100vw;
+`;
+
+const NewLabelArea = styled.div`
+    display: block;
+    padding-bottom: 20px;
+`;
+
+const NewLabelButton = styled.button`
+    padding: 6px 12px;
+    float: right;
+    font-size: 14px;
+    background-color: #28a745;
+    border-color: rgba(27, 31, 35, 0.5);
+    color: #ffffff;
+    border-radius: 0.25em;
+`;
+
+const NewLabelForm = styled.form`
+    width: 100vw;
+    display: block;
 `;
 
 class Labels extends React.Component {
@@ -58,6 +84,15 @@ class Labels extends React.Component {
         this.setState({ bg_color: color.hex });
     };
 
+    getLabels() {
+        const request = axios.create({
+            baseURL: "http://localhost:3000"
+        });
+        request.get("/labels").then(res => {
+            this.setState({ labels: res.data });
+        });
+    }
+
     handleSubmit = event => {
         event.preventDefault();
         const request = axios.create({
@@ -68,45 +103,56 @@ class Labels extends React.Component {
             description: this.state.description,
             bg_color: this.state.bg_color
         });
-        alert("ノートが作成されました");
+        this.setState({ name: "", description: "", visible_new_form: false });
+        this.getLabels();
     };
+
     render() {
+        const label = this.state.labels.map(label => {
+            return <li>{label.name}</li>;
+        });
         return (
             <Wrapper>
-                <button onClick={this.addLabelForm}>new label</button>
-                {this.state.visible_new_form && (
-                    <form onSubmit={this.handleSubmit}>
-                        <div>
-                            <span style={{ color: this.state.bg_color }}>
-                                Label preview
-                            </span>
-                        </div>
-                        <div>
-                            <input
-                                type="text"
-                                name="name"
-                                value={this.state.name}
-                                onChange={this.handleNameChange}
-                            />
-                            <input
-                                type="text"
-                                name="description"
-                                value={this.state.description}
-                                onChange={this.handleDescriptionChange}
-                            />
-                            <button onClick={this.hideForm}>Cancel</button>
-                            <input type="submit" value="Create label" />
-                        </div>
-                        <p style={{ color: this.state.bg_color }}>
-                            ラベル一覧
-                            <TwitterPicker
-                                color={this.state.bg_color}
-                                onChangeComplete={this.handleChangeComplete}
-                            />
-                        </p>
-                    </form>
-                )}
-                <TitleArea>Labels</TitleArea>
+                <Container>
+                    <NewLabelArea>
+                        <NewLabelButton onClick={this.addLabelForm}>
+                            new label
+                        </NewLabelButton>
+                    </NewLabelArea>
+                    {this.state.visible_new_form && (
+                        <NewLabelForm onSubmit={this.handleSubmit}>
+                            <div>
+                                <span style={{ color: this.state.bg_color }}>
+                                    Label preview
+                                </span>
+                            </div>
+                            <div>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    value={this.state.name}
+                                    onChange={this.handleNameChange}
+                                />
+                                <input
+                                    type="text"
+                                    name="description"
+                                    value={this.state.description}
+                                    onChange={this.handleDescriptionChange}
+                                />
+                                <button onClick={this.hideForm}>Cancel</button>
+                                <input type="submit" value="Create label" />
+                            </div>
+                            <p style={{ color: this.state.bg_color }}>
+                                ラベル一覧
+                                <TwitterPicker
+                                    color={this.state.bg_color}
+                                    onChangeComplete={this.handleChangeComplete}
+                                />
+                            </p>
+                        </NewLabelForm>
+                    )}
+                    {label}
+                </Container>
             </Wrapper>
         );
     }

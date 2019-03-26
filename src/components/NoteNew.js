@@ -9,12 +9,13 @@ const Wrapper = styled.div`
 
 const TitleArea = styled.div`
     display: block;
-    height: 19vh;
+    height: 20vh;
     width: 100vw;
 `;
 
 const TypeTitleArea = styled.textarea`
     display: inline-block;
+    height: 100vh;
     width: 50vw;
     margin-left: 65px;
     font-family: "Arial";
@@ -99,14 +100,14 @@ class NoteNew extends React.Component {
                         />
                         <SubmitButton type="submit">Save</SubmitButton>
                     </TitleArea>
-                    <ContentArea
-                        type="content"
-                        name="content"
-                        value={this.state.content}
-                        onChange={this.handleContentChange}
-                        placeholder="text here"
-                    />
                 </form>
+                <ContentArea
+                    type="content"
+                    name="content"
+                    value={this.state.content}
+                    onChange={this.handleContentChange}
+                    placeholder="text here"
+                />
             </Wrapper>
         );
     }
