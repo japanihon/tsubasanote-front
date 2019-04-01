@@ -107,9 +107,39 @@ class Labels extends React.Component {
         this.getLabels();
     };
 
+    // deleteLabel = id => {
+    //     this.setState({
+    //         labels: this.state.labels.filter(label => {
+    //             return label.id !== id;
+    //         })
+    //     });
+    // };
+
+    deleteLabel = id => {
+        const request = axios.create({
+            baseURL: "http://localhost:3000"
+        });
+        console.log(`/labels/${id}`);
+        request.delete(`/labels/${id}`);
+        this.getLabels();
+    };
+
     render() {
         const label = this.state.labels.map(label => {
-            return <li>{label.name}</li>;
+            return (
+                <div>
+                    <li>{label.name}</li>
+                    {
+                        <button
+                            onClick={() => {
+                                this.deleteLabel(label.id);
+                            }}
+                        >
+                            削除
+                        </button>
+                    }
+                </div>
+            );
         });
         return (
             <Wrapper>
