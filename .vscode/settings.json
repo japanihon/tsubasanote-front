@@ -1,4 +1,10 @@
 {
+<<<<<<< HEAD
   "editor.formatOnSave": true,
   "prettier.tabWidth": 4
 }
+=======
+    "editor.formatOnSave": true,
+    "prettier.tabWidth": 2
+}
+>>>>>>> 27839bb52bcdba6efde4a53a268e1a766fbd32d8

@@ -6,12 +6,22 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --mode development",
-    "build": "webpack --config webpack.config.js --mode production"
+    "build": "webpack --config webpack.config.js --mode production",
+    "fmt": "prettier --write src/**/*.js",
+    "precommit": "lint-staged",
+    "prettier-watch": "onchange './src/**/*.{js,scss,json,css}' -- prettier --config ./.prettierrc --write {{changed}}"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.3.4",
     "@fortawesome/fontawesome-free": "^5.7.2",
     "axios": "^0.18.0",
+    "onchange": "^5.2.0",
     "react": "^16.8.3",
     "react-color": "^2.17.0",
     "react-dom": "^16.8.3",
@@ -26,6 +36,9 @@
     "babel-loader": "^8.0.5",
     "html-webpack-plugin": "^3.2.0",
     "http-server": "^0.11.1",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.5",
+    "prettier": "^1.16.4",
     "webpack": "^4.29.5",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.2.1"

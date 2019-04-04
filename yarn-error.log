@@ -1,5 +1,9 @@
 Arguments: 
+<<<<<<< HEAD
   /Users/nakanot/.nodebrew/node/v10.15.1/bin/node /Users/nakanot/.nodebrew/current/bin/yarn add react-color--save
+=======
+  /Users/nakanot/.nodebrew/node/v10.15.1/bin/node /Users/nakanot/.nodebrew/current/bin/yarn add pretter lint-staged husky --dev
+>>>>>>> 27839bb52bcdba6efde4a53a268e1a766fbd32d8
 
 PATH: 
   /Users/nakanot/.nodebrew/current/bin:/Users/nakanot/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -14,7 +18,11 @@ Platform:
   darwin x64
 
 Trace: 
+<<<<<<< HEAD
   Error: https://registry.yarnpkg.com/react-color--save: Not found
+=======
+  Error: https://registry.yarnpkg.com/pretter: Not found
+>>>>>>> 27839bb52bcdba6efde4a53a268e1a766fbd32d8
       at Request.params.callback [as _callback] (/Users/nakanot/.nodebrew/node/v10.15.1/lib/node_modules/yarn/lib/cli.js:66255:18)
       at Request.self.callback (/Users/nakanot/.nodebrew/node/v10.15.1/lib/node_modules/yarn/lib/cli.js:129397:22)
       at Request.emit (events.js:189:13)
@@ -28,6 +36,7 @@ Trace:
 
 npm manifest: 
   {
+<<<<<<< HEAD
     "name": "tsubasanote-front",
     "version": "1.0.0",
     "main": "index.js",
@@ -58,6 +67,41 @@ npm manifest:
       "webpack-cli": "^3.2.3",
       "webpack-dev-server": "^3.2.1"
     }
+=======
+      "name": "tsubasanote-front",
+      "version": "1.0.0",
+      "main": "index.js",
+      "license": "MIT",
+      "scripts": {
+          "test": "echo \"Error: no test specified\" && exit 1",
+          "start": "webpack-dev-server --mode development",
+          "build": "webpack --config webpack.config.js --mode production",
+          "fmt": "prettier --write src/**/*.js"
+      },
+      "dependencies": {
+          "@babel/plugin-proposal-class-properties": "^7.3.4",
+          "@fortawesome/fontawesome-free": "^5.7.2",
+          "axios": "^0.18.0",
+          "react": "^16.8.3",
+          "react-color": "^2.17.0",
+          "react-dom": "^16.8.3",
+          "react-router-dom": "^4.3.1",
+          "styled-components": "^4.1.3"
+      },
+      "devDependencies": {
+          "@babel/core": "^7.3.4",
+          "@babel/preset-env": "^7.3.4",
+          "@babel/preset-react": "^7.0.0",
+          "babel": "^6.23.0",
+          "babel-loader": "^8.0.5",
+          "html-webpack-plugin": "^3.2.0",
+          "http-server": "^0.11.1",
+          "prettier": "1.16.4",
+          "webpack": "^4.29.5",
+          "webpack-cli": "^3.2.3",
+          "webpack-dev-server": "^3.2.1"
+      }
+>>>>>>> 27839bb52bcdba6efde4a53a268e1a766fbd32d8
   }
 
 yarn manifest: 
@@ -757,6 +801,14 @@ Lockfile:
     version "5.7.2"
     resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.7.2.tgz#1498c3eb78ee7c78c5488418707de90aaf58d5d7"
     integrity sha512-Ha4HshKdCVKgu4TVCtG8XyPPYdzTzNW4/fvPnn+LT7AosRABryhlRv4cc4+o84dgpvVJN9reN7jo/c+nYujFug==
+<<<<<<< HEAD
+=======
+  
+  "@icons/material@^0.2.4":
+    version "0.2.4"
+    resolved "https://registry.yarnpkg.com/@icons/material/-/material-0.2.4.tgz#e90c9f71768b3736e76d7dd6783fc6c2afa88bc8"
+    integrity sha512-QPcGmICAPbGLGb6F/yNf/KzKqvFx8z5qx3D1yFqVAjoFmXK35EgyW+cJ57Te3CNsmzblwtzakLGFqHPqrfb4Tw==
+>>>>>>> 27839bb52bcdba6efde4a53a268e1a766fbd32d8
   
   "@webassemblyjs/ast@1.8.3":
     version "1.8.3"
@@ -3117,7 +3169,11 @@ Lockfile:
       p-locate "^3.0.0"
       path-exists "^3.0.0"
   
+<<<<<<< HEAD
   lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.3:
+=======
+  lodash@>4.17.4, lodash@^4.0.1, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.3:
+>>>>>>> 27839bb52bcdba6efde4a53a268e1a766fbd32d8
     version "4.17.11"
     resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
     integrity sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
@@ -3176,6 +3232,11 @@ Lockfile:
     integrity sha1-7Nyo8TFE5mDxtb1B8S80edmN+48=
     dependencies:
       object-visit "^1.0.0"
+  
+  material-colors@^1.2.1:
+    version "1.2.6"
+    resolved "https://registry.yarnpkg.com/material-colors/-/material-colors-1.2.6.tgz#6d1958871126992ceecc72f4bcc4d8f010865f46"
+    integrity sha512-6qE4B9deFBIa9YSpOc9O0Sgc43zTeVYbgDT5veRKSlB2+ZuHNoVVxA1L/ckMUayV9Ay9y7Z/SZCLcGteW9i7bg==
   
   md5.js@^1.3.4:
     version "1.3.5"
@@ -3884,6 +3945,14 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz#9ff822547e2893213cf1c30efa51ac5fd1ba8281"
     integrity sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==
   
+<<<<<<< HEAD
+=======
+  prettier@1.16.4:
+    version "1.16.4"
+    resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.16.4.tgz#73e37e73e018ad2db9c76742e2647e21790c9717"
+    integrity sha512-ZzWuos7TI5CKUeQAtFd6Zhm2s6EpAD/ZLApIhsF9pRvRtM1RFo61dM/4MSRUA0SuLugA/zgrZD8m0BaY46Og7g==
+  
+>>>>>>> 27839bb52bcdba6efde4a53a268e1a766fbd32d8
   pretty-error@^2.0.2:
     version "2.1.1"
     resolved "https://registry.yarnpkg.com/pretty-error/-/pretty-error-2.1.1.tgz#5f4f87c8f91e5ae3f3ba87ab4cf5e03b1a17f1a3"
@@ -3912,7 +3981,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/promise-inflight/-/promise-inflight-1.0.1.tgz#98472870bf228132fcbdd868129bad12c3c029e3"
     integrity sha1-mEcocL8igTL8vdhoEputEsPAKeM=
   
+<<<<<<< HEAD
   prop-types@^15.5.4, prop-types@^15.6.1, prop-types@^15.6.2:
+=======
+  prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.6.1, prop-types@^15.6.2:
+>>>>>>> 27839bb52bcdba6efde4a53a268e1a766fbd32d8
     version "15.7.2"
     resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
     integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -4051,6 +4124,18 @@ Lockfile:
       minimist "^1.2.0"
       strip-json-comments "~2.0.1"
   
+  react-color@^2.17.0:
+    version "2.17.0"
+    resolved "https://registry.yarnpkg.com/react-color/-/react-color-2.17.0.tgz#e14b8a11f4e89163f65a34c8b43faf93f7f02aaa"
+    integrity sha512-kJfE5tSaFe6GzalXOHksVjqwCPAsTl+nzS9/BWfP7j3EXbQ4IiLAF9sZGNzk3uq7HfofGYgjmcUgh0JP7xAQ0w==
+    dependencies:
+      "@icons/material" "^0.2.4"
+      lodash ">4.17.4"
+      material-colors "^1.2.1"
+      prop-types "^15.5.10"
+      reactcss "^1.2.0"
+      tinycolor2 "^1.4.1"
+  
   react-dom@^16.8.3:
     version "16.8.3"
     resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.8.3.tgz#ae236029e66210783ac81999d3015dfc475b9c32"
@@ -4106,6 +4191,16 @@ Lockfile:
       prop-types "^15.6.2"
       scheduler "^0.13.3"
   
+<<<<<<< HEAD
+=======
+  reactcss@^1.2.0:
+    version "1.2.3"
+    resolved "https://registry.yarnpkg.com/reactcss/-/reactcss-1.2.3.tgz#c00013875e557b1cf0dfd9a368a1c3dab3b548dd"
+    integrity sha512-KiwVUcFu1RErkI97ywr8nvx8dNOpT03rbnma0SSalTYjkrPYaEajR4a/MRt6DZ46K6arDRbWMNHF+xH7G7n/8A==
+    dependencies:
+      lodash "^4.0.1"
+  
+>>>>>>> 27839bb52bcdba6efde4a53a268e1a766fbd32d8
   "readable-stream@1 || 2", readable-stream@^2.0.0, readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.6, readable-stream@^2.1.5, readable-stream@^2.2.2, readable-stream@^2.3.3, readable-stream@^2.3.6, readable-stream@~2.3.6:
     version "2.3.6"
     resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.3.6.tgz#b11c27d88b8ff1fbe070643cf94b0c79ae1b0aaf"
@@ -4799,6 +4894,14 @@ Lockfile:
     dependencies:
       setimmediate "^1.0.4"
   
+<<<<<<< HEAD
+=======
+  tinycolor2@^1.4.1:
+    version "1.4.1"
+    resolved "https://registry.yarnpkg.com/tinycolor2/-/tinycolor2-1.4.1.tgz#f4fad333447bc0b07d4dc8e9209d8f39a8ac77e8"
+    integrity sha1-9PrTM0R7wLB9TcjpIJ2POaisd+g=
+  
+>>>>>>> 27839bb52bcdba6efde4a53a268e1a766fbd32d8
   to-arraybuffer@^1.0.0:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/to-arraybuffer/-/to-arraybuffer-1.0.1.tgz#7d229b1fcc637e466ca081180836a7aabff83f43"
