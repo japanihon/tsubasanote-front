@@ -8,11 +8,12 @@
     "start": "webpack-dev-server --mode development",
     "build": "webpack --config webpack.config.js --mode production",
     "fmt": "prettier --write src/**/*.js",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "prettier-watch": "onchange './src/**/*.{js,scss,json,css}' -- prettier --config ./.prettierrc --write {{changed}}"
   },
   "lint-staged": {
-    "*.{js,css,json,md}": [
-      "pretter --write",
+    "*.js": [
+      "prettier --write",
       "git add"
     ]
   },
@@ -20,6 +21,7 @@
     "@babel/plugin-proposal-class-properties": "^7.3.4",
     "@fortawesome/fontawesome-free": "^5.7.2",
     "axios": "^0.18.0",
+    "onchange": "^5.2.0",
     "react": "^16.8.3",
     "react-color": "^2.17.0",
     "react-dom": "^16.8.3",
