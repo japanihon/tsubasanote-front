@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import styled from "styled-components";
 import { TwitterPicker } from "react-color";
+import spinner from "./spinner.gif";
 
 const Wrapper = styled.div`
   display: inline-block;
@@ -40,6 +41,8 @@ const NewLabelForm = styled.form`
   display: block;
 `;
 
+const Loading = styled.img``;
+
 class Labels extends React.Component {
   constructor() {
     super();
@@ -48,7 +51,8 @@ class Labels extends React.Component {
       name: "",
       description: "",
       bg_color: "#ffffff",
-      visible_new_form: false
+      visible_new_form: false,
+      loading: true
     };
   }
   componentDidMount() {
@@ -57,7 +61,8 @@ class Labels extends React.Component {
     });
     request.get("/labels").then(res => {
       this.setState({
-        labels: res.data
+        labels: res.data,
+        loading: false
       });
     });
   }
@@ -119,6 +124,7 @@ class Labels extends React.Component {
               new label
             </NewLabelButton>
           </NewLabelArea>
+          {this.state.loading && <Loading src={spinner} />}
           {this.state.visible_new_form && (
             <NewLabelForm onSubmit={this.handleSubmit}>
               <div>
