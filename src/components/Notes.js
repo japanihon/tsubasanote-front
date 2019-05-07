@@ -1,5 +1,4 @@
 import React from "react";
-import SideBar from "./SideBar.js";
 import axios from "axios";
 import styled from "styled-components";
 

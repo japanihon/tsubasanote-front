@@ -6,8 +6,8 @@ import { Z_BLOCK } from "zlib";
 
 const Wrapper = styled.div`
   display: inline-block;
-  height: 100%;
-  width: 80%;
+  height: 100vh;
+  width: calc(100vw - 260px);
 `;
 const TitleArea = styled.div`
   display: inline-flex;
@@ -17,7 +17,6 @@ const TitleArea = styled.div`
 
 const NoteTitle = styled.h1`
   margin: 30px 0 30px 65px;
-  width: 80vw;
   font-family: "Arial";
   font-size: 64px;
   color: #888888;
@@ -25,7 +24,6 @@ const NoteTitle = styled.h1`
 
 const NoteDate = styled.p`
   margin-top: 75px;
-  margin-right: 20px;
   display: inline-flex;
   font-family: "Arial";
   font-size: 16px;
@@ -35,7 +33,6 @@ const NoteDate = styled.p`
 const NoteContentArea = styled.div`
   display: block;
   margin-top: 30px;
-  width: 100%;
   font-family: "Arial";
   font-size: 16px;
   color: #aaaaaa;
@@ -43,7 +40,6 @@ const NoteContentArea = styled.div`
 `;
 
 const NoteContent = styled.p`
-  width: 95%;
   line-height: 32px;
 `;
 

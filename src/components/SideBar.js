@@ -24,7 +24,7 @@ const IconImg = styled.img`
   height: 64px;
   width: 64px;
   border-radius: 50%;
-  margin-left: 45px;
+  margin-left: 30px;
   background: white;
 `;
 

@@ -4,23 +4,25 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   display: inline-block;
+  height: 100vh;
   width: calc(100vw - 260px);
 `;
 
 const TitleArea = styled.div`
   display: block;
   height: 20vh;
-  width: 100vw;
+  border-bottom: 1px solid #dddddd;
 `;
 
 const TypeTitleArea = styled.textarea`
   display: inline-block;
-  height: 100vh;
-  width: 50vw;
-  margin-left: 65px;
+  width: 60vw;
+  height: 81%;
   font-family: "Arial";
   font-size: 64px;
   border: none;
+  margin-left: 65px;
+  margin-top: 30px;
   ::placeholder {
     color: #dddddd;
   }
@@ -43,12 +45,12 @@ const SubmitButton = styled.button`
 
 const ContentArea = styled.textarea`
   display: block;
-  height: 80vh;
-  width: 75vw;
-  margin-left: 65px;
+  height: calc(100% - 21vh);
+  width: 80%;
   font-family: "Arial";
   font-size: 16px;
   border: none;
+  margin: 0 65px;
   ::placeholder {
     color: #dddddd;
   }
@@ -79,11 +81,17 @@ class NoteNew extends React.Component {
     const request = axios.create({
       baseURL: "http://localhost:3000"
     });
-    request.post("/notes", {
-      title: this.state.title,
-      content: this.state.content
-    });
-    alert("ノートが作成されました");
+    request
+      .post("/notes", {
+        title: this.state.title,
+        content: this.state.content
+      })
+      .then(() => {
+        alert("ノートが作成されました");
+      })
+      .catch(() => {
+        alert("ノートの作成に失敗しました");
+      });
   };
 
   render() {
